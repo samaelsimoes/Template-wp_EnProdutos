@@ -10,7 +10,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'accesspress-store' ); ?></h2>
+		<h2 class="page-title"><?php esc_html_e( 'Nada encontrado', 'accesspress-store' ); ?></h2>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -20,7 +20,7 @@
 				printf(
 					'<p>' . wp_kses(
 						/* translators: 1: link to WP admin new post page. */
-						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'accesspress-store' ),
+						__( 'pronto para publicar seu primeiro post? <a href="%1$s"> Comece aqui </a>.', 'accesspress-store' ),
 						array(
 							'a' => array(
 								'href' => array(),
@@ -29,18 +29,16 @@
 					) . '</p>',
 					esc_url( admin_url( 'post-new.php' ) )
 				);
-			?>
-
-			
+			?>		
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'accesspress-store' ); ?></p>
+			<p><?php esc_html_e( 'Desculpe, mas nada correspondeu aos seus termos de pesquisa. Por favor, tente novamente com algumas palavras-chave diferentes.', 'accesspress-store' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'accesspress-store' ); ?></p>
+			<p><?php esc_html_e( 'Parece que não conseguimos encontrar o que você está procurando. Talvez a pesquisa possa ajudar.', 'accesspress-store' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>

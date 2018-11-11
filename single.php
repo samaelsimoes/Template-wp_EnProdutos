@@ -22,15 +22,16 @@ if($breadcrumb == '1') :
 <div class="page_header_wrap clearfix" style="background:url('<?php echo esc_url($bread_archive); ?>') no-repeat center; background-size: cover;">
     <div class="ak-container">
         <header class="entry-header">
-            <?php the_title('<h2 class="entry-title">', '</h2>'); ?>
+            <?php the_title('<h2 class="entry-title">', '</h2>'); ?> 
         </header><!-- .entry-header -->
         <?php accesspress_breadcrumbs() ?>
     </div>
 </div>
 <?php endif; ?>
 <div class="inner">
+
     <main id="main" class="site-main clearfix <?php echo esc_attr($single_post_layout); ?>">
-        
+    
         <?php if ($single_post_layout == 'both-sidebar'): ?>
             <div id="primary-wrap" class="clearfix">
         <?php endif; ?>

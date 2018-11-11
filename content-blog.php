@@ -33,9 +33,7 @@ if (has_post_thumbnail()):
     $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
 endif;
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
-
     <div class="content-inner clearfix">
         <div class="inner_article clearfix">
             <?php if ( has_post_thumbnail() ): ?>
@@ -48,8 +46,8 @@ endif;
                 <header class="entry-header">
                     <span class="cat-name">
                         <?php
-                            $category = get_the_category();
-                            echo esc_html($category[0]->cat_name);
+                           /* $category = get_the_category();
+                            echo esc_html($category[0]->cat_name);*/
                         ?>
                     </span>
                     <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
@@ -79,7 +77,7 @@ endif;
                         ?>
                     </div>
                     <a href="<?php the_permalink(); ?>" class="bttn read-more">
-                        <?php echo esc_html__('Read More', 'accesspress-store'); ?>
+                        <?php echo esc_html__('Consulte Mais informação', 'accesspress-store'); ?>
                     </a>
                     <?php
                         wp_link_pages(array(
@@ -87,9 +85,21 @@ endif;
                             'after' => '</div>',
                         ));
                     ?>
+                   
                 </div><!-- .entry-content -->
             </div><!-- .blog_desc -->
         </div><!-- .blog_desc -->
+       
     </div>
+    <script>
+        (function(d, s, id) {
+
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=588662397886785";
+            fjs.parentNode.insertBefore(js, fjs);
+        }	(document, 'script', 'facebook-jssdk'));
+    </script>
     <div class="clearfix"></div>
 </article><!-- #post-## -->

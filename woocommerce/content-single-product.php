@@ -27,18 +27,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * woocommerce_before_single_product hook.
 	 *
 	 * @hooked wc_print_notices - 10
-	 */
-	 do_action( 'woocommerce_before_single_product' );
+	*/
+	do_action( 'woocommerce_before_single_product' );
 
-	 if ( post_password_required() ) {
+	if ( post_password_required() ) {
 	 	echo wp_kses_post(get_the_password_form());
 	 	return;
-	 }
+	}
 ?>
 
 <div id="product-<?php the_ID(); ?>" <?php post_class('single-img'); ?>>
-	<div class="img-wrap">
-	<?php
+	<div class="img-wrap"> 
+	<?php     
 		/**
 		 * woocommerce_before_single_product_summary hook.
 		 *
@@ -65,7 +65,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 * @hooked WC_Structured_Data::generate_product_data() - 60
 			 */
 			do_action( 'woocommerce_single_product_summary' );
+			//echo do_shortcode("[")
 		?>
+		<p>
+			<span style="color: #339966;"><strong>
+			<span style="color: #000000;">Whatsapp:</span>
+			<span style="color: #339966;"> (47) 98847-2903</span> 
+			<span style="color: #ff0000;">| 
+				<span style="color: #ff6600;">
+					<span style="color: #000000;">Comercial:</span>  (47) 3467-7079
+				</span>
+			|</span>
+			 <span style="color: #339966;">Chat Online</span></strong></span></p>
+	
 		<?php 
 			/**
 			 * Detect plugin. For use on Front End only.

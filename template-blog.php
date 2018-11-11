@@ -1,3 +1,5 @@
+
+
 <?php
 /**
  * This is the front page code
@@ -5,6 +7,8 @@
  * @package AccessPress Store
  */
 get_header();
+
+
 
 global $post;
 
@@ -45,12 +49,14 @@ if($breadcrumb == '1') { ?>
             
             <div id="primary" class="content-area <?php echo esc_attr( get_theme_mod('blog_post_layout') ); ?> ">
                 <?php
-                $exclude_cat = get_theme_mod('blog_exclude_categories');
-                $exclude_cat = explode(',', $exclude_cat);
+                /*$exclude_cat = get_theme_mod('blog_exclude_categories');
+                $exclude_cat = explode(',', $exclude_cat);*/
+                
                 $args = array('post_type' => 'post',
-                  'posts_per_page' => 10,
-                  'category__not_in' => $exclude_cat,
+                    'posts_per_page'      => 10,
+                    'category__not_in'    => $exclude_cat,
                 );
+                
                 $query = new WP_Query($args);
                 if ($query->have_posts()): while ($query->have_posts()) : $query->the_post();
                 ?>
@@ -79,55 +85,56 @@ if($breadcrumb == '1') { ?>
                 } ?>
 
                     <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
-                        <div class="content-inner clearfix">
+                        <div class="content-inner clearfix">                        
                             <?php if (has_post_thumbnail()){ ?>
                                 <div class="entry-thumbanil">
                                     <img src="<?php echo esc_url( $image[0] ); ?>" alt="<?php the_title(); ?>">
-
                                     <a class="img-over-link" href="<?php the_permalink(); ?>"><span class="thumb_outer"><span class="thumb_inner"><i class="fa fa-link"></i></span></span></a>
-
                                 </div>
                             <?php } ?>
-                                <div class="blog_desc">
-                                    <header class="entry-header">
-                                        <span class="cat-name">
-                                            <?php 
-                                                $category = get_the_category();
+                            <div class="blog_desc">
+                                <header class="entry-header">
+                                    <span class="cat-name">
+                                        <?php  /*
+                                           $category = get_the_category();
+                                            if( $category[0]->cat_name != "IMAGEM SLIDER" ) {
                                                 echo esc_html($category[0]->cat_name);
-                                             ?>
-                                        </span>
-                                        <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() )), '</a></h2>'); ?>
+                                            }*/
+                                        ?>
+                                    </span>
+                                    <?php the_title(sprintf('<h2 class="entry-title cat-name""><a href="%s" rel="bookmark">', esc_url( get_permalink() )), '</a></h2>'); ?>
 
-                                        <?php if ('post' == get_post_type()) : ?>
-                                            <div class="entry-meta">
-                                                <p class="meta-info">
-                                                    <?php echo esc_html__('Posted On', 'accesspress-store'); ?> 
-                                                    <?php the_time('F j, Y'); ?> 
-                                                    <?php echo esc_html__('at', 'accesspress-store'); ?>
-                                                    <?php the_time('g:i a'); ?> 
-                                                    <?php echo esc_html__('by', 'accesspress-store'); ?>
-                                                    <?php the_author_posts_link(); ?> /  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
-                                                </p>
-                                            </div><!-- .entry-meta -->
-                                        <?php endif; ?>
-                                    </header><!-- .entry-header -->
-                                    <div class="entry-content">
-                                        <div class="desc">
-                                            <?php
-                                            if ($blog_post_layout == 'blog_layout4'):
-                                                echo esc_html(get_the_content());
-                                            else:
-                                                echo esc_html(accesspress_letter_count(get_the_content(), '200'));
-                                            endif;
-                                            ?>
-                                        </div>
-                                        <a href="<?php the_permalink(); ?>" class="bttn read-more">
-                                            <?php esc_html_e('Read More', 'accesspress-store'); ?>
-                                        </a>
-                                    </div><!-- .entry-content -->
-                                </div>
-                        </div>
-                    </article><!-- #post-## -->
+                                    <?php if ('post' == get_post_type()) : ?>
+                                        <div class="entry-meta">
+                                            <p class="meta-info">
+                                                <?php echo esc_html__('Posted On', 'accesspress-store'); ?> 
+                                                <?php the_time('F j, Y'); ?> 
+                                                <?php echo esc_html__('at', 'accesspress-store'); ?>
+                                                <?php the_time('g:i a'); ?> 
+                                                <?php echo esc_html__('by', 'accesspress-store'); ?>
+                                                <?php the_author_posts_link(); ?> /  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
+                                            </p>
+                                        </div><!-- .entry-meta -->
+                                    <?php endif; ?>
+                                </header><!-- .entry-header -->
+                                <div class="entry-content">
+                                    <div class="desc">
+                                        <?php
+                                        if ($blog_post_layout == 'blog_layout4'):
+                                            echo esc_html(get_the_content());
+                                        else:
+                                            echo esc_html(accesspress_letter_count(get_the_content(), '200'));
+                                        endif;
+                                        ?>
+                                    </div>
+                                    <a href="<?php the_permalink(); ?>" class="bttn read-more">
+                                        <?php esc_html_e('Leia mais', 'accesspress-store'); ?>
+                                    </a>
+                                </div><!-- .entry-content -->
+                            </div>
+                        </div>                    
+                    </article><!-- #post-## --> 
+                   
                 <?php  endwhile; endif; wp_reset_query(); ?>
             </div><!-- #primary -->
 
@@ -146,7 +153,9 @@ if($breadcrumb == '1') { ?>
                     get_sidebar('right');
                 endif;
             ?>
-
-    </main><!-- #main -->
+    </main><!-- #main -->   
 </div>
+
+
+
 <?php get_footer(); 

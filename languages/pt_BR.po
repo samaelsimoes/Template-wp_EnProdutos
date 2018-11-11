@@ -1,14 +1,13 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: accesspress-store\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-05 11:01+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"POT-Creation-Date: 2018-10-20 00:46+0000\n"
+"PO-Revision-Date: 2018-10-20 00:57+0000\n"
+"Last-Translator: samael pereira simoes <samael.simoes@gmail.com>\n"
+"Language-Team: Português do Brasil\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,6 +18,9 @@ msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:18
+msgctxt ""
+"Parece que nada foi encontrado neste local. Talvez tente um dos links abaixo "
+"ou uma pesquisa?\n"
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
@@ -47,17 +49,19 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-blog.php:61 content-single.php:18 content.php:20 
+#: content-blog.php:61 content-single.php:18 content.php:20
 #: template-blog.php:104
 msgid "Posted On"
 msgstr ""
 
-#: content-blog.php:63 content-single.php:20 content.php:22 
+#: content-blog.php:63 content-single.php:20 content.php:22
 #: template-blog.php:106
+msgctxt ""
+"a\n"
 msgid "at"
 msgstr ""
 
-#: content-blog.php:65 content-single.php:22 content.php:24 
+#: content-blog.php:65 content-single.php:22 content.php:24
 #: template-blog.php:108
 msgid "by"
 msgstr ""
@@ -80,12 +84,18 @@ msgid ""
 msgstr ""
 
 #: content-none.php:23
+msgctxt ""
+"Desculpe, mas nada correspondeu aos seus termos de pesquisa. Por favor, "
+"tente novamente com algumas palavras-chave diferentes.\n"
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
 #: content-none.php:28
+msgctxt ""
+"Parece que não conseguimos encontrar o que você está procurando. Talvez a "
+"pesquisa possa ajudar.\n"
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -149,6 +159,8 @@ msgid ""
 msgstr ""
 
 #: functions.php:163
+msgctxt ""
+"Ativo\n"
 msgid "Active"
 msgstr ""
 
@@ -157,10 +169,14 @@ msgid "Customize"
 msgstr ""
 
 #: functions.php:200
+msgctxt ""
+"Já instalado\n"
 msgid "Already installed"
 msgstr ""
 
 #: functions.php:203
+msgctxt ""
+"Ativar\n"
 msgid "Activate"
 msgstr ""
 
@@ -173,12 +189,16 @@ msgid "Live Preview"
 msgstr ""
 
 #: search.php:15
+msgctxt ""
+"Resultados da pesquisa para:% s\n"
 msgid "Search Results for: %s"
 msgstr ""
 
 #: searchform.php:8
+msgctxt ""
+"Procurar produtos\n"
 msgid "Search products"
-msgstr "Buscar produtos"
+msgstr "Procurar produtos"
 
 #. Name of the template
 msgid "Blog Page Template"
@@ -197,6 +217,7 @@ msgid "!"
 msgstr ""
 
 #: header/header-one.php:62 header/header-two.php:68
+msgctxt "Sair"
 msgid " Logout"
 msgstr ""
 
@@ -286,14 +307,19 @@ msgid "Archive by category"
 msgstr ""
 
 #: inc/accesspress-function.php:502
+msgctxt ""
+"Buscar resultados para\n"
 msgid "Search results for"
 msgstr ""
+"Buscar resultados para\n"
 
 #: inc/accesspress-function.php:560
 msgid "Posts tagged"
 msgstr ""
 
 #: inc/accesspress-function.php:564
+msgctxt ""
+"Artigos publicados por\n"
 msgid "Articles posted by "
 msgstr ""
 
@@ -458,7 +484,7 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: woocommerce/content-feat-product.php:83 woocommerce/content-product.php:68 
+#: woocommerce/content-feat-product.php:83 woocommerce/content-product.php:68
 #: inc/widgets/widget-product1.php:211
 msgid "Wishlist"
 msgstr ""
@@ -510,10 +536,12 @@ msgid "Leave a comment"
 msgstr ""
 
 #: inc/core/template-tags.php:122
+msgctxt "1 Comentário"
 msgid "1 Comment"
 msgstr ""
 
 #: inc/core/template-tags.php:122
+msgctxt "% Comentarios"
 msgid "% Comments"
 msgstr ""
 
@@ -561,7 +589,8 @@ msgid "F j, Y"
 msgstr ""
 
 #: inc/core/template-tags.php:156
-msgctxt "post format archive title"
+msgctxt ""
+"Apartes\n"
 msgid "Asides"
 msgstr ""
 
@@ -606,6 +635,7 @@ msgid "Chats"
 msgstr ""
 
 #: inc/core/template-tags.php:175
+msgctxt "Arquivos: %s"
 msgid "Archives: %s"
 msgstr ""
 
@@ -615,6 +645,7 @@ msgid "%1$s: %2$s"
 msgstr ""
 
 #: inc/core/template-tags.php:181
+msgctxt "Arquivo"
 msgid "Archives"
 msgstr ""
 
@@ -622,102 +653,102 @@ msgstr ""
 msgid "Boxed"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:10 
+#: inc/customizer/accesspress-sanitizer.php:10
 #: inc/customizer/general-settings/general-setting.php:197
 msgid "Full Width"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:21 
+#: inc/customizer/accesspress-sanitizer.php:21
 #: inc/customizer/layout-settings/pagepost-setting.php:103
 msgid "List"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:22 
+#: inc/customizer/accesspress-sanitizer.php:22
 #: inc/customizer/layout-settings/pagepost-setting.php:104
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:33 
+#: inc/customizer/accesspress-sanitizer.php:33
 #: inc/customizer/blog-settings/blog-setting.php:27
 msgid "Blog Image Large"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:34 
+#: inc/customizer/accesspress-sanitizer.php:34
 #: inc/customizer/blog-settings/blog-setting.php:28
 msgid "Blog Image Medium"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:35 
+#: inc/customizer/accesspress-sanitizer.php:35
 #: inc/customizer/blog-settings/blog-setting.php:29
 msgid "Blog Image Medium Alternate"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:36 
+#: inc/customizer/accesspress-sanitizer.php:36
 #: inc/customizer/blog-settings/blog-setting.php:30
 msgid "Blog Full Content"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:47 
+#: inc/customizer/accesspress-sanitizer.php:47
 #: inc/customizer/general-settings/general-setting.php:152
 msgid "Color"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:48 
+#: inc/customizer/accesspress-sanitizer.php:48
 #: inc/customizer/general-settings/general-setting.php:153
 msgid "Image"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:49 
+#: inc/customizer/accesspress-sanitizer.php:49
 #: inc/customizer/general-settings/general-setting.php:154
 msgid "Pattern"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:92 
+#: inc/customizer/accesspress-sanitizer.php:92
 #: inc/customizer/slider-settings/slider-setting.php:78
 msgid "Fade"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:93 
+#: inc/customizer/accesspress-sanitizer.php:93
 #: inc/customizer/slider-settings/slider-setting.php:79
 msgid "Slide"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:104 
+#: inc/customizer/accesspress-sanitizer.php:104
 #: inc/customizer/general-settings/general-setting.php:40
 msgid "Header Style One"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:105 
+#: inc/customizer/accesspress-sanitizer.php:105
 #: inc/customizer/general-settings/general-setting.php:41
 msgid "Header Style Two"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:116 
+#: inc/customizer/accesspress-sanitizer.php:116
 #: inc/customizer/general-settings/general-setting.php:20
 msgid "Widget Title Style One"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:117 
+#: inc/customizer/accesspress-sanitizer.php:117
 #: inc/customizer/general-settings/general-setting.php:21
 msgid "Widget Title Style Two"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:128 
+#: inc/customizer/accesspress-sanitizer.php:128
 #: inc/customizer/custom-control-class.php:17
 msgid "Enable"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:129 
+#: inc/customizer/accesspress-sanitizer.php:129
 #: inc/customizer/custom-control-class.php:18
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:140 
+#: inc/customizer/accesspress-sanitizer.php:140
 #: inc/customizer/custom-control-class.php:35
 msgid "Yes"
 msgstr ""
 
-#: inc/customizer/accesspress-sanitizer.php:141 
+#: inc/customizer/accesspress-sanitizer.php:141
 #: inc/customizer/custom-control-class.php:36
 msgid "No"
 msgstr ""
@@ -739,8 +770,11 @@ msgid "Mega menu"
 msgstr ""
 
 #: inc/customizer/custom-control-class.php:116
+msgctxt ""
+"Pesquisa avançada de produtos\n"
 msgid "Advanced product search"
 msgstr ""
+"Pesquisa avançada de produtos\n"
 
 #: inc/customizer/custom-control-class.php:117
 msgid "Boxed and full layout"
@@ -771,6 +805,8 @@ msgid "Multiple Category display layout"
 msgstr ""
 
 #: inc/customizer/custom-control-class.php:124
+msgctxt ""
+"Pesquisa de produtos e conteúdo\n"
 msgid "Product and content search"
 msgstr ""
 
@@ -855,6 +891,8 @@ msgid "Fast loading"
 msgstr ""
 
 #: inc/customizer/custom-control-class.php:145
+msgctxt ""
+"Um tema perfeito para começar sua loja online de qualquer tipo!\n"
 msgid "A perfect theme to start your online shop of any kind!"
 msgstr ""
 
@@ -863,11 +901,13 @@ msgid "Buy Now"
 msgstr ""
 
 #: inc/widgets/widget-cta-simple.php:26
+msgctxt ""
+"Um widget que mostra o Simple Call to Action\n"
 msgid "A widget that shows Simple Call to Action"
 msgstr ""
 
-#: inc/widgets/widget-cta-simple.php:39 inc/widgets/widget-cta-video.php:39 
-#: inc/widgets/widget-full-promo.php:39 inc/widgets/widget-icon-text.php:41 
+#: inc/widgets/widget-cta-simple.php:39 inc/widgets/widget-cta-video.php:39
+#: inc/widgets/widget-full-promo.php:39 inc/widgets/widget-icon-text.php:41
 #: inc/widgets/widget-product1.php:70 inc/widgets/widget-promo.php:39
 msgid "Title"
 msgstr ""
@@ -889,6 +929,8 @@ msgid "Button Url"
 msgstr ""
 
 #: inc/widgets/widget-cta-video.php:26
+msgctxt ""
+"Um widget que mostra a frase de chamariz com vídeo\n"
 msgid "A widget that shows Call to Action with Video"
 msgstr ""
 
@@ -913,6 +955,8 @@ msgid "View File"
 msgstr ""
 
 #: inc/widgets/widget-full-promo.php:26
+msgctxt ""
+"Um widget que fornece Promo de largura total do objeto\n"
 msgid "A widget that Gives Full Width Promo of the object"
 msgstr ""
 
@@ -941,6 +985,8 @@ msgid "Enter Promo Link"
 msgstr ""
 
 #: inc/widgets/widget-icon-text.php:26
+msgctxt ""
+"Um widget que mostra texto com ícone\n"
 msgid "A widget that shows Text with Icon"
 msgstr ""
 
@@ -1023,6 +1069,8 @@ msgid "Select the Display Style (Image Alignment)"
 msgstr ""
 
 #: inc/widgets/widget-promo.php:26
+msgctxt ""
+"Um widget que fornece Promo do objeto\n"
 msgid "A widget that Gives Promo of the object"
 msgstr ""
 
@@ -1253,7 +1301,7 @@ msgstr ""
 msgid "Upload SSL Seal Image"
 msgstr ""
 
-#: inc/customizer/paymentlogo-settings/paymentlogo-setting.php:123 
+#: inc/customizer/paymentlogo-settings/paymentlogo-setting.php:123
 #: inc/customizer/paymentlogo-settings/paymentlogo-setting.php:138
 msgid "Upload Other Seal 2 Image"
 msgstr ""
@@ -1406,23 +1454,23 @@ msgstr ""
 msgid "WooCommerce Archive Page"
 msgstr ""
 
-#: inc/customizer/slider-settings/slider-setting.php:363 
-#: inc/customizer/slider-settings/slider-setting.php:394 
-#: inc/customizer/slider-settings/slider-setting.php:425 
+#: inc/customizer/slider-settings/slider-setting.php:363
+#: inc/customizer/slider-settings/slider-setting.php:394
+#: inc/customizer/slider-settings/slider-setting.php:425
 #: inc/customizer/slider-settings/slider-setting.php:456
 msgid "Enable/Disable Breadcrumb"
 msgstr ""
 
-#: inc/customizer/slider-settings/slider-setting.php:376 
-#: inc/customizer/slider-settings/slider-setting.php:407 
-#: inc/customizer/slider-settings/slider-setting.php:438 
+#: inc/customizer/slider-settings/slider-setting.php:376
+#: inc/customizer/slider-settings/slider-setting.php:407
+#: inc/customizer/slider-settings/slider-setting.php:438
 #: inc/customizer/slider-settings/slider-setting.php:469
 msgid "Upload Background Image"
 msgstr ""
 
-#: inc/customizer/slider-settings/slider-setting.php:378 
-#: inc/customizer/slider-settings/slider-setting.php:409 
-#: inc/customizer/slider-settings/slider-setting.php:440 
+#: inc/customizer/slider-settings/slider-setting.php:378
+#: inc/customizer/slider-settings/slider-setting.php:409
+#: inc/customizer/slider-settings/slider-setting.php:440
 #: inc/customizer/slider-settings/slider-setting.php:471
 msgid ""
 "Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 "
@@ -1441,7 +1489,7 @@ msgstr ""
 msgid "Breadcrumb Post Options"
 msgstr ""
 
-#: inc/customizer/woocommerce-settings/woocommerce-setting.php:9 
+#: inc/customizer/woocommerce-settings/woocommerce-setting.php:9
 #: inc/customizer/woocommerce-settings/woocommerce-setting.php:16
 msgid "Woocommerce Setting"
 msgstr ""
@@ -1451,14 +1499,28 @@ msgid "Custom Placeholder"
 msgstr ""
 
 #: inc/customizer/woocommerce-settings/woocommerce-setting.php:50
+msgctxt ""
+"Hide Header Pesquisa de produtos\n"
 msgid "Hide Header Product Search"
 msgstr ""
 
 #. Name of the theme
+msgctxt ""
+"Loja AccessPress\n"
 msgid "AccessPress Store"
 msgstr ""
 
 #. Description of the theme
+msgctxt ""
+"AccessPress Store é um tema WordPress gratuito que funciona lindamente com o "
+"WooCommerce. O tema é embalado com muitos recursos interessantes que "
+"aprimoram a experiência de comércio eletrônico. Possui slider Product, "
+"whistlist avançada, lista de show de produtos em destaque, call to action e "
+"muito mais. Com suas opções avançadas de personalização, a configuração do "
+"site de comércio eletrônico ficou muito mais fácil. Ótimo atendimento ao "
+"cliente via chat online, email, fórum de suporte. Fórum de suporte oficial: "
+"http://accesspressthemes.com/support/ Veja a demonstração completa aqui: "
+"http://demo.accesspressthemes.com/accesspress-store/\n"
 msgid ""
 "AccessPress Store is free WordPress theme that work beautifully with "
 "WooCommerce. The theme is packed with lots of exciting feature that enhances "
@@ -1475,6 +1537,8 @@ msgid "https://accesspressthemes.com/wordpress-themes/accesspress-store/"
 msgstr ""
 
 #. Author of the theme
+msgctxt ""
+"AccessPress Themes\n"
 msgid "AccessPress Themes"
 msgstr ""
 

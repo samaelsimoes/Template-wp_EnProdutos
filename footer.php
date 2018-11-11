@@ -90,15 +90,22 @@
             if(!empty($copyright)) :
                 echo wp_kses_post($copyright);
             else :
-                echo "<div class='contact-details'> <span>- Direitos Reservados En Produtos© CNPJ: <span></div>";
+                echo "<div class='contact-details'> <span>- Copyright © Todos Direitos Reservados 2018 En Produtos© CNPJ: 23.461.125/0001-14 <span></div>";
             endif;
           ?> 
         </div><!-- .site-info -->
     </div>
 </div>
-
 </footer><!-- #colophon -->
 </div><!-- #page -->
+
+<section class="footer-bottom">
+    <div class="row ak-container">
+        <div class="col">
+            <span> <a href="https://samaelsimoes.github.io" style="font-weight: 400;color: #141414 !important;"> Desenvolvido por: <i class="fab fa-github"></i> </a></span>
+        </div>
+    </div>
+</section>
 <div id="ak-top"><i class="fa fa-reply"></i></div>
 <?php wp_footer(); ?>
 </body>

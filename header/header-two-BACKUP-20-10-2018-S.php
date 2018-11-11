@@ -12,7 +12,7 @@
                 ?>
                         <div class="welcome-user">
                             <span class="line">|</span>
-                            <?php esc_html_e('Bem vindo', 'accesspress-store'); ?>
+                            <?php esc_html_e('Welcome', 'accesspress-store'); ?>
                             <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" class="my-account">
                                 <span class="user-name">
                                     <?php echo esc_html($current_user->display_name); ?>
@@ -65,13 +65,13 @@
                         wp_get_current_user();
                     ?>
                         <a href="<?php echo esc_url(wp_logout_url( home_url() )); ?>" class="logout">
-                            <?php esc_html_e(' Sair', 'accesspress-store'); ?>
+                            <?php esc_html_e(' Logout', 'accesspress-store'); ?>
                         </a>
                         <?php
                     } else {
                         ?>
                         <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" class="account">
-                            <?php esc_html_e('Entrar', 'accesspress-store'); ?>
+                            <?php esc_html_e('Login', 'accesspress-store'); ?>
                         </a>
                     <?php } ?>
                 </div>

@@ -91,9 +91,7 @@ function accesspress_store_setup() {
 endif;
 add_action( 'after_setup_theme', 'accesspress_store_setup' );
 
-/**
- * AccessPress Store Admin Enqueue Js
-*/
+
 function accesspress_store_wp_admin_section() {
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
     wp_enqueue_style( 'ap-admin-css', get_template_directory_uri() . '/inc/css/ap-admin.css' );
@@ -121,3 +119,39 @@ add_action( 'customize_controls_enqueue_scripts', 'accesspress_store_custom_cust
  * Load Require init file.
 */
 require $accesspress_store_file_directory_init_file_path = trailingslashit( get_template_directory() ).'inc/init.php';
+
+add_action( 'woocommerce_single_product_summary', "dcms_caracteristicas_producto", 10 );
+
+function dcms_caracteristicas_producto() {
+  if (function_exists('get_field')) {
+	$parcela 	= get_field("parcela");
+	$parcela    =(float)$parcela;
+	$parcela    = number_format($parcela, 2, ',', '.');
+	$qt_parcela = get_field("qt_parcela");
+	$avista  	= get_field("a_vista");
+	$avista  	=(float)$avista;
+	$avista 	= number_format($avista, 2, ',', '.');
+	echo "<div class='text-center'>". 
+		"<span class='custom-inf-parcela '> ou em até ". $qt_parcela . "x de </span> <span class='custom-valor-parcela'>  R$". $parcela ."</span> <span class='custom-inf-parcela '> na entrega </span>".
+	"</div>".
+	"<div class='text-center'>". 
+		"<span class='custom-inf-parcela '> ou apenas </span><span class='custom-valor-parcela'> R$". $avista . "</span><span class='custom-inf-parcela '> à vista na entrega <span>".
+	"</div>";
+
+  }
+}
+
+/**
+ * Funcao responsavel de listar a avaliação
+*/
+function get_star_rating() {
+    global $woocommerce, $product;
+    $average = $product->get_average_rating();
+
+  	return '<div class="star-rating rounded mx-auto d-block">
+				<span style="width:'.( ( $average / 5 ) * 100 ) . '%" title="'. $average.'">
+					<strong itemprop="ratingValue" class="rating">'.$average.'</strong> '.__( 'out of 5', 'woocommerce' ).'	
+				</span>
+			</div>';
+}
+

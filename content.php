@@ -22,7 +22,7 @@
                         <?php echo esc_html__('at', 'accesspress-store'); ?>
                         <?php the_time('g:i a'); ?> 
                         <?php echo esc_html__('by', 'accesspress-store'); ?>
-                        <?php the_author_posts_link(); ?> /  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
+                        <?php the_author_posts_link(); ?> /  <?php comments_popup_link('Sem comentários', '1 Comentario', '% Comentarios'); ?>
                         / <?php the_category(','); ?>
                     </p>
                 </div><!-- .entry-meta -->
@@ -32,7 +32,7 @@
                 	<?php the_excerpt(); ?>
                	</div>
                	<a href="<?php the_permalink(); ?>" class="bttn read-more">
-                    <?php echo __('Read More', 'accesspress-store'); ?>
+                    <?php echo __('consulte Mais informação', 'accesspress-store'); ?>
                 </a>                        	                       	
             </div><!-- .entry-content -->                       
         </div>

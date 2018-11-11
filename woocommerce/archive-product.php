@@ -60,70 +60,8 @@ if ( $breadcrumb == '1' ) :
 <?php endif; ?>
 
 <div class="inner">
-    <div class="ak-container left-sidebar"> 
-        <div id="primary" class="content-area clearfix">
-            <div class="content-inner">
-                <?php
-                if ( have_posts() ) {
-
-                    /**
-                     * Hook: woocommerce_before_shop_loop.
-                     *
-                     * @hooked wc_print_notices - 10
-                     * @hooked woocommerce_result_count - 20
-                     * @hooked woocommerce_catalog_ordering - 30
-                     */
-                    do_action( 'woocommerce_before_shop_loop' );
-                    ?>
-                    <div class="clearfix"></div>
-                    <div class="wc-products">
-                        <?php
-                        woocommerce_product_loop_start();
-
-                        if ( wc_get_loop_prop( 'total' ) ) {
-                            while ( have_posts() ) {
-                                the_post();
-
-                                /**
-                                 * Hook: woocommerce_shop_loop.
-                                 *
-                                 * @hooked WC_Structured_Data::generate_product_data() - 10
-                                 */
-                                do_action( 'woocommerce_shop_loop' );
-
-                                wc_get_template_part( 'content', 'product' );
-                            }
-                        }
-
-                        woocommerce_product_loop_end();
-                        ?>
-                    </div>
-                    <?php
-                    /**
-                     * Hook: woocommerce_after_shop_loop.
-                     *
-                     * @hooked woocommerce_pagination - 10
-                     */
-                    do_action( 'woocommerce_after_shop_loop' );
-                } else {
-                    /**
-                     * Hook: woocommerce_no_products_found.
-                     *
-                     * @hooked wc_no_products_found - 10
-                     */
-                    do_action( 'woocommerce_no_products_found' );
-                }
-
-                /**
-                 * Hook: woocommerce_after_main_content.
-                 *
-                 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-                 */
-                do_action( 'woocommerce_after_main_content' );
-                ?>
-            </div>
-        </div>
-        <div id="secondary" class="widget-area secondary-left sidebar">
+    <div class="row ak-container left-sidebar"> 
+        <div id="secondary" class="col-md-3 widget-area secondary-left sidebar">
             <?php
             /**
              * Hook: woocommerce_sidebar.
@@ -132,6 +70,124 @@ if ( $breadcrumb == '1' ) :
              */
             do_action( 'woocommerce_sidebar' );
             ?>
+        </div>
+        
+        <div id="primary" class="col-md-9 content-area clearfix">
+            <?php 
+                $category    = get_the_terms( $post->ID, 'product_cat' );
+                $id_category = $terms[0]->term_id;
+                $name        = $terms[0]->name;
+                $slug        = $terms[0]->slug;              
+
+                $args = array( 'post_type'       => 'product', 
+                                'product_cat'    => $name, 
+                                'post_status'    => 'publish',
+                                'posts_per_page' => 2,
+                                'paged'          => get_query_var('paged') ? get_query_var('paged') : 1,
+                                'tax_query' => array( array(
+                                    'taxonomy'         => 'product_cat',
+                                    'field'            => 'slug', 
+                                    'terms'            => get_query_var( 'product_cat' )
+                                )),
+                                'orderby' => 'rand'
+                            );
+                $loop = new WP_Query( $args );              
+            ?>
+            <div class="row content-inner">
+                <?php
+                if ( $loop->have_posts() ) {
+                    while ( $loop->have_posts() ) : $loop->the_post();
+                        global $product;
+                        $link    	= get_the_permalink($post_id);
+                        $image      = get_post_thumbnail_id();
+                        $image      = wp_get_attachment_image_src($image,'img-polaroid');
+                        $image      = $image[0];
+                        $parcela 	= get_field("parcela");
+                        $parcela    = (float)$parcela;
+                        $parcela    = number_format($parcela, 2, ',', '.');
+                        $qt_parcela = get_field("qt_parcela");
+                        $avista  	= get_field("a_vista");
+                        $avista  	= (float)$avista;
+                        $avista 	= number_format($avista, 2, ',', '.');
+
+                        $title   	= get_the_title( $post_title['post_title']);
+                        $currency   = get_woocommerce_currency_symbol();
+                        $price      = get_post_meta( get_the_ID(), '_regular_price', true);
+                        $formatado  = (float)$price;
+                        $valor 		= number_format($formatado, 2, ',', '.');
+            ?>
+                        <div class="col-md-4 custom-img-post custom-height-product ">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="<?=$link?>">
+                                        <img src="<?php echo $image ?>" class="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col custom-title-product text-center custom-value">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="<?php echo $link?>">
+                                                <h3 class='custom-title-product' style="padding: 10px;"><?= $title ?></h3>
+                                            </a>	                                   
+
+                                            <span>								
+                                                <?php echo $currency. $valor ?>
+                                            </span>
+
+                                            <div class="row"> 
+                                                <div class="col">                                      
+                                                    <span class='custom-inf-parcela ' style="display: inline;"> ou em até  <?php echo $qt_parcela ?> x de </span> 
+                                                    <span class='custom-valor-parcela' style="display: inline;">  R$ <?php echo $parcela ?> </span>
+                                                    <span class='custom-inf-parcela '> na entrega </span>
+                                                </div>
+                                            </div>
+                                            <div class="row"> 
+                                                <div class="col">  
+                                                    <span class='custom-inf-parcela '  style="display: inline;"> ou apenas </span>
+                                                    <span class='custom-valor-parcela' style="display: inline;"> R$ <?php echo $avista ?> </span>
+                                                    <span class='custom-inf-parcela '  style="display: inline;"> à vista na entrega <span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php   
+                    endwhile;                         
+                } else { ?>
+                    Nenhum produto cadastrado 
+          <?php } ?>
+            </div>  
+            <div class="row ">
+                <div class="col">
+                    <div class='custom-shortcode wc-products custom-altura-botao-categoria'>
+                        <div class='products pagination custom-bottom'>
+                            <div class="col">
+                                <?php 
+                                    echo paginate_links( array(
+                                        'base' => str_replace( 999999999, '%#%', get_pagenum_link( 999999999 ) ),
+                                        'format' => '?paged=%#%',
+                                        'current' => max( 1, get_query_var('paged') ),
+                                        'total' => $loop->max_num_pages,
+                                        'prev_next' => true,
+                                        'prev_text' => 'Página Anterior',
+                                        'next_text' => 'Próxima Página',
+                                        'before_page_number' => '-',
+                                        'after_page_number' => '>',
+                                        'show_all' => false,
+                                        'mid_size' => 3,
+                                        'end_size' => 1
+                                     ));
+                                     wp_reset_postdata();
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                              
         </div>
     </div>
 </div>

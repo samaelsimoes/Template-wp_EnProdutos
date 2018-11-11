@@ -37,7 +37,7 @@ if($breadcrumb == '1') :
     </div>
 </div>
 <?php endif; ?>
-<div class="inner"> 
+<div class="inner">  
     <main id="main" class="site-main clearfix <?php echo esc_attr($single_page_layout); ?>">
         <?php if ($single_page_layout == 'both-sidebar'): ?>
             <div id="primary-wrap" class="clearfix">
